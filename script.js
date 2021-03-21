@@ -6,8 +6,23 @@ var UpperChars = ["A", "B", "C", "D", "E", "F", "G", "H",]
 var LowerChars = ["i", "j", "k", "l", "m", "n", "o", "p"]
 var SpecialChars = ["!", "&", "$", "%",]
 var Numbers =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var userChoiceLengthminimum = [8]
+var userChoiceLengthMaximum = [12]
+var UserChoiceNumber = String.Numbers
+var userChoiceUpper = String.UpperChars
+var UserChoiceLower = String.LowerChars
+var UserchoiceSpecialChar = String.SpecialChars
+var passwordChar = (userChoiceLengthMaximum, userChoiceLengthminimum, userChoiceUpper, UserChoiceLower, UserChoiceNumber, UserchoiceSpecialChar)
 
-function generatePassword() {
+// Write password to the #password input
+function writePassword(passedInVariable) {
+  console.log ("In here")
+  var passwordText = document.querySelector("#password");
+  passwordText.textContent = passwordChar
+  }
+
+function generatePassword(passedInVariable){
+  console.log ('passwordChar, PASSWORDCHAR')
   var password = "";
   var passwordChar= "";
   
@@ -60,15 +75,8 @@ if (UserChoiceNumber) {passwordChar === Number;
       }
       
     }
-    generatePassword(),
-
-// Write password to the #password input
-      function writePassword() {
-        var passwordText = document.querySelector("#password");
-        passwordText.value = passwordChar;
-        return ("");
-      }
-      writePassword(),
+    generatePassword();
+    writePassword();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", function(event) {
