@@ -28,11 +28,12 @@ THEN the password is either displayed in an alert or written to the page
 W3schools.com
 The Professional Readme Guide
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
+https://medium.com/@justynagolawska/how-to-easily-add-screenshots-into-your-readme-file-on-github-d806a01d6ffd
 
 ## License
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) [2021] [Shanisha Mitchell]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

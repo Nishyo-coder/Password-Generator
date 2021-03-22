@@ -12,7 +12,9 @@ var characters = ["A", "B", "C", "D", "E", "F", "G", "H",
 // Write password to the #password input
 function writePassword(password) {
   var passwordText = document.querySelector("#password");
-  
+
+//I want to select random ariables from my array of variables based off user choice
+
   passwordText.textContent = characters[Math.floor(Math.random() * characters.length)]
 }
 
@@ -31,11 +33,8 @@ function generatePassword() {
   //we have to validate that at least one was selected;  validate the > or = 1 to sign 
   //generate a password that includes selected criteria
   //
-
-    //I want to select random ariables from my array of variables based off user choice
-
   
-  // Computer prompts for user to create strong password
+  // Computer prompts for user to create strong password (I got stuck here returning the variables chosen. Still working through my logic as written)
 var userChoiceLength = window.prompt("How many characters in your password, must be between 8 and 12");
 
 //If user chooses a number of password characters greater than 12 or less than 8
