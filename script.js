@@ -2,34 +2,44 @@
 var generateBtn = document.querySelector("#generate");
 
 // Array of characters for computer to pick from 
-var UpperChars = ["A", "B", "C", "D", "E", "F", "G", "H",]
-var LowerChars = ["i", "j", "k", "l", "m", "n", "o", "p"]
-var SpecialChars = ["!", "&", "$", "%",]
-var Numbers =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-var userChoiceLengthminimum = [8]
-var userChoiceLengthMaximum = [12]
-var UserChoiceNumber = String.Numbers
-var userChoiceUpper = String.UpperChars
-var UserChoiceLower = String.LowerChars
-var UserchoiceSpecialChar = String.SpecialChars
-var passwordChar = (userChoiceLengthMaximum, userChoiceLengthminimum, userChoiceUpper, UserChoiceLower, UserChoiceNumber, UserchoiceSpecialChar)
+var characters = ["A", "B", "C", "D", "E", "F", "G", "H", 
+"i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+"u","v","w", "x", "y", "z", "!", "&", "$", "%", "@", "*",
+ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+ console.log(characters);
 
 // Write password to the #password input
-function writePassword(passedInVariable) {
-  console.log ("In here")
+function writePassword(password) {
   var passwordText = document.querySelector("#password");
-  passwordText.textContent = passwordChar
-  }
+  
+  passwordText.textContent = characters[Math.floor(Math.random() * characters.length)]
+}
 
-function generatePassword(passedInVariable){
-  console.log ('passwordChar, PASSWORDCHAR')
+function generatePassword() {
+
   var password = "";
-  var passwordChar= "";
+
+  //Each line should say yes or no to the password criteria
+  //click button; generate password
+  //password length has to e 8-12 characters
+  //character type1; lowercase
+  //character type2; uppercase
+  //character type3; numeric
+  //character type4; special character
+
+  //we have to validate that at least one was selected;  validate the > or = 1 to sign 
+  //generate a password that includes selected criteria
+  //
+
+    //I want to select random ariables from my array of variables based off user choice
+
   
   // Computer prompts for user to create strong password
-var userChoiceLength = window.prompt("Choose a password length with 8-12 characters long");
+var userChoiceLength = window.prompt("How many characters in your password, must be between 8 and 12");
 
 //If user chooses a number of password characters greater than 12 or less than 8
+
 if (userChoiceLength > 12) {
   window.prompt("Password must have less than 12 characters!");
   return"";
@@ -39,48 +49,38 @@ if (userChoiceLength > 12) {
      return "";
 }
 
-// Computer confirms character choices with prompts
+// Computer confirms user character choices with prompts
 var userChoiceUpper = window.prompt("Click OK to Include Uppercase letters");
 var userChoiceUpper = confirm("Okay"); 
-if (userChoiceUpper) {passwordChar === UpperChars;
+if (userChoiceUpper) {password === characters;
 } else { 
     window.prompt("You sure?");
   }
 
 var UserChoiceLower = window.prompt("Click OK to Include Lowercase letters");
 var UserChoiceLower = confirm("Better");
-if (UserChoiceLower) {passwordChar === LowerChars;
+if (UserChoiceLower) {password === characters;
 } else {
   window.prompt("Bad Idea!");
 }
 
-//Confused why if my variable "numbers" is plural, then why must it be singular here. Must be bc it's integer.
-
 var UserChoiceNumber = window.prompt("Click OK to Include Numbers");
 var UserChoiceNumber = confirm("Solid");
-if (UserChoiceNumber) {passwordChar === Number;
+if (UserChoiceNumber) {password === characters;
 } else {
   window.prompt("You definitely should have a number!");
 }
 
   var UserchoiceSpecialChar = window.prompt("Click OK to Include Special Characters letters");
   var UserchoiceSpecialChar = confirm("Strong"); 
-  if (UserchoiceSpecialChar) {passwordChar === SpecialChars;
+  if (UserchoiceSpecialChar) {password === characters;
   } else { 
       window.prompt("I don't like them either");
     }
-   
-    for (var i = 0; i < userChoiceLength; i++) {
-      password = passwordChar[Math.floor(Math.random() * passwordChar.length)]
-      }
-      
     }
-    generatePassword();
-    writePassword();
+    generatePassword(),
+
+writePassword();
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", function(event) {
-  event.preventDefault();
-  })
-
-  
+generateBtn.addEventListener("click", generatePassword);
